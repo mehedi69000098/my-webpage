@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehedi Hasan - Web Developer</title>
+
+  <!-- Google Fonts for Bold & Stylish Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* General Body Styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(45deg, #FFB6C1, #87CEEB); /* Gradient background */
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Centering the Content */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* "HI MY WORLD" Styling */
+    #hi-my-world {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.4em;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      color: #FF6347;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #hi-my-world span {
+      margin-left: 10px;
+      font-size: 1.6em;
+    }
+
+    /* Digital Clock Styling */
+    #clock {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5em;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Stylish Header */
+    h1 {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      font-size: 2.2em;
+      background: linear-gradient(to right, #FF6347, #FFB6C1, #87CEEB);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-top: 50px;
+    }
+
+    /* Profile Picture Section */
+    .profile-picture {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-picture img:hover {
+      transform: scale(1.1);
+    }
+
+    /* About Me Section */
+    .about-me {
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    .about-me p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #f0f0f0;
+    }
+
+    .about-me p.bold-text {
+      font-weight: bold;
+      color: #FF6347;
+    }
+
+    /* Music Player Section */
+    .music-player {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .music-player h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    /* Projects Section */
+    .projects {
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .projects h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    .project {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    .project h3 {
+      font-size: 1.5em;
+      color: #007BFF;
+    }
+
+    .project p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .project a {
+      font-size: 1.2em;
+      color: #007BFF;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .project a:hover {
+      color: #FF6347;
+      text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact-info {
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    .contact-item {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    .contact-item h3 {
+      font-size: 1.5em;
+      color: #007BFF;
+    }
+
+    .contact-item p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .contact-item a {
+      font-size: 1.2em;
+      color: #007BFF;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: #FF6347;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- "HI MY WORLD" text on the top left -->
+  <div id="hi-my-world">
+    <span>HI MY WORLD</span> ❤️
+  </div>
+
+  <!-- Digital Clock -->
+  <div id="clock"></div>
+
+  <!-- Header -->
+  <header>
+    <h1>Mehedi Hasan - Web Developer</h1>
+  </header>
+
+  <!-- Profile Section -->
+  <section class="profile-picture">
+    <img src="mehedi-photo.jpg" alt="Your Photo" id="photo-placeholder">
+  </section>
+
+  <!-- About Me Section -->
+  <section class="about-me">
+    <h2>About Me</h2>
+    <p><span class="bold-text">I am a simple boy but not innocent.</span> I love to explore the world of technology, creating things that make life a little more exciting. This website is created for my hobby—web development, and it's a space where I can share my projects and passions with the world. I believe in the beauty of simplicity and the power of creativity, and this site reflects that.</p>
+    <p>Location: Magda, Dhaka, Bangladesh</p>
+    <p>Religion: Islam</p>
+  </section>
+
+  <!-- Music Player Section -->
+  <section class="music-player">
+    <h2>Listen to My Favorite Music</h2>
+    <audio controls autoplay>
+      <source src="your-song.mp3" type="audio/mp3">
+      <source src="your-song.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <h2>Projects & Work</h2>
+    
+    <div class="project">
+      <h3>eSports Tournament Organizing</h3>
+      <p>I organize online and offline eSports tournaments, handling everything from bracket setup to event streaming.</p>
+      <a href="your-tournament-link.html" target="_blank">Learn More</a>
+    </div>
+
+    <div class="project">
+      <h3>Website Development Projects</h3>
+      <p>I specialize in building responsive websites that cater to various needs, from blogs to eCommerce.</p>
+      <a href="your-portfolio-link.html" target="_blank">View Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Contact Information Section -->
+  <section class="contact-info">
+    <h2>Contact Information</h2>
+
+    <div class="contact-item">
+      <h3>Phone Number</h3>
+      <p>+880 1848621163</p>
+    </div>
+
+    <div class="contact-item">
+      <h3>Facebook</h3>
+      <p><a href="https://www.facebook.com/mehedi.6909" target="_blank">Mehedi Hasan on Facebook</a></p>
+    </div>
+  </section>
+
+  <!-- JavaScript for Digital Clock -->
+  <script>
+    function updateClock() {
+      const clockElement = document.getElementById('clock');
+      const currentTime = new Date();
+      const hours = currentTime.getHours().toString().padStart(2, '0');
+      const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+      const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+      clockElement.innerText = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initialize the clock
+    updateClock();
+  </script>
+
+</body>
+</html>
